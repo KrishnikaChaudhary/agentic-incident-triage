@@ -1,0 +1,715 @@
+{
+  "trace_id": "e87f48deb5744604ac47ce3e1c5aa7a1",
+  "name": "INC-107",
+  "summary": {
+    "trace_id": "e87f48deb5744604ac47ce3e1c5aa7a1",
+    "llm_calls": 17,
+    "tool_calls": 4,
+    "tool_cache_hits": 2,
+    "span_errors": 0,
+    "injection_lines_removed": 0,
+    "tokens_in": 1918,
+    "tokens_out": 262,
+    "total_tokens": 2180,
+    "cost_usd": 0.0025809,
+    "tokens_per_sec": 47.519792716280406,
+    "avg_ttft_s": 0.18529411764705883,
+    "latency_s": 5.673492063492064,
+    "per_agent": {
+      "supervisor": {
+        "calls": 7,
+        "tokens_in": 476,
+        "tokens_out": 35,
+        "cost_usd": 9.239999999999998e-05
+      },
+      "log_analyst": {
+        "calls": 2,
+        "tokens_in": 231,
+        "tokens_out": 31,
+        "cost_usd": 5.324999999999999e-05
+      },
+      "code_investigator": {
+        "calls": 2,
+        "tokens_in": 254,
+        "tokens_out": 30,
+        "cost_usd": 5.6099999999999995e-05
+      },
+      "fix_proposer": {
+        "calls": 2,
+        "tokens_in": 224,
+        "tokens_out": 104,
+        "cost_usd": 0.002232
+      },
+      "critic": {
+        "calls": 4,
+        "tokens_in": 733,
+        "tokens_out": 62,
+        "cost_usd": 0.00014715
+      }
+    }
+  },
+  "spans": [
+    {
+      "span_id": "4201d4b5",
+      "parent_id": null,
+      "name": "incident",
+      "kind": "request",
+      "attrs": {
+        "incident": "INC-107",
+        "config": "optimized",
+        "run_id": "a0a45a1e80474e28a2842167d64c159d",
+        "attempt": 1
+      },
+      "start": 1185.773529613,
+      "wall_s": 0.0006317710001439991,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "375856f3",
+      "parent_id": "4201d4b5",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.773535629,
+      "wall_s": 1.8116000092049944e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "4cd86f3c",
+      "parent_id": "375856f3",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "small"
+      },
+      "start": 1185.773539585,
+      "wall_s": 1.327600011791219e-05,
+      "latency_s": 0.17777777777777776,
+      "tokens_in": 68,
+      "tokens_out": 5,
+      "ttft_s": 0.15,
+      "cost_usd": 1.3199999999999999e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "01bfd9c6",
+      "parent_id": "4201d4b5",
+      "name": "log_analyst",
+      "kind": "agent",
+      "attrs": {
+        "agent": "log_analyst"
+      },
+      "start": 1185.773566913,
+      "wall_s": 0.00010508200011827284,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "e05d450b",
+      "parent_id": "01bfd9c6",
+      "name": "llm:log_analyst",
+      "kind": "llm",
+      "attrs": {
+        "agent": "log_analyst",
+        "model": "small"
+      },
+      "start": 1185.77357134,
+      "wall_s": 1.1486999937915243e-05,
+      "latency_s": 0.2222222222222222,
+      "tokens_in": 100,
+      "tokens_out": 13,
+      "ttft_s": 0.15,
+      "cost_usd": 2.2800000000000002e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "b2329a1c",
+      "parent_id": "01bfd9c6",
+      "name": "tool:search_logs",
+      "kind": "tool",
+      "attrs": {
+        "agent": "log_analyst",
+        "tool": "search_logs",
+        "arg": "SocketTimeoutException"
+      },
+      "start": 1185.773587681,
+      "wall_s": 5.9812000017700484e-05,
+      "latency_s": 0.08,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "e653687d",
+      "parent_id": "01bfd9c6",
+      "name": "llm:log_analyst",
+      "kind": "llm",
+      "attrs": {
+        "agent": "log_analyst",
+        "model": "small"
+      },
+      "start": 1185.77365233,
+      "wall_s": 1.7456000023230445e-05,
+      "latency_s": 0.25,
+      "tokens_in": 131,
+      "tokens_out": 18,
+      "ttft_s": 0.15,
+      "cost_usd": 3.0449999999999995e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "4c30833b",
+      "parent_id": "4201d4b5",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.773686354,
+      "wall_s": 1.6715000128897373e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "108d194a",
+      "parent_id": "4c30833b",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "small"
+      },
+      "start": 1185.773690801,
+      "wall_s": 1.1711000070135924e-05,
+      "latency_s": 0.17777777777777776,
+      "tokens_in": 68,
+      "tokens_out": 5,
+      "ttft_s": 0.15,
+      "cost_usd": 1.3199999999999999e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "ae7468fe",
+      "parent_id": "4201d4b5",
+      "name": "code_investigator",
+      "kind": "agent",
+      "attrs": {
+        "agent": "code_investigator"
+      },
+      "start": 1185.77371541,
+      "wall_s": 8.803600007922796e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "923d1a22",
+      "parent_id": "ae7468fe",
+      "name": "llm:code_investigator",
+      "kind": "llm",
+      "attrs": {
+        "agent": "code_investigator",
+        "model": "small"
+      },
+      "start": 1185.773719655,
+      "wall_s": 1.1654999980237335e-05,
+      "latency_s": 0.22777777777777777,
+      "tokens_in": 101,
+      "tokens_out": 14,
+      "ttft_s": 0.15,
+      "cost_usd": 2.3549999999999996e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "13210dd2",
+      "parent_id": "ae7468fe",
+      "name": "tool:read_file",
+      "kind": "tool",
+      "attrs": {
+        "agent": "code_investigator",
+        "tool": "read_file",
+        "arg": "PaymentClient.java:11"
+      },
+      "start": 1185.773735437,
+      "wall_s": 3.864600012093433e-05,
+      "latency_s": 0.08,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "3620c3cc",
+      "parent_id": "ae7468fe",
+      "name": "llm:code_investigator",
+      "kind": "llm",
+      "attrs": {
+        "agent": "code_investigator",
+        "model": "small"
+      },
+      "start": 1185.773778396,
+      "wall_s": 2.2752000177206355e-05,
+      "latency_s": 0.23888888888888887,
+      "tokens_in": 153,
+      "tokens_out": 16,
+      "ttft_s": 0.15,
+      "cost_usd": 3.255e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "8a4624f8",
+      "parent_id": "4201d4b5",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.773816818,
+      "wall_s": 1.5377000181615585e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "8e0783d7",
+      "parent_id": "8a4624f8",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "small"
+      },
+      "start": 1185.773820628,
+      "wall_s": 1.0998999869116233e-05,
+      "latency_s": 0.17777777777777776,
+      "tokens_in": 68,
+      "tokens_out": 5,
+      "ttft_s": 0.15,
+      "cost_usd": 1.3199999999999999e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "c36ace79",
+      "parent_id": "4201d4b5",
+      "name": "fix_proposer",
+      "kind": "agent",
+      "attrs": {
+        "agent": "fix_proposer",
+        "revision": false
+      },
+      "start": 1185.773846373,
+      "wall_s": 2.0329000108176842e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "7aa44d92",
+      "parent_id": "c36ace79",
+      "name": "llm:fix_proposer",
+      "kind": "llm",
+      "attrs": {
+        "agent": "fix_proposer",
+        "model": "large"
+      },
+      "start": 1185.77384996,
+      "wall_s": 1.615900009710458e-05,
+      "latency_s": 1.0214285714285714,
+      "tokens_in": 86,
+      "tokens_out": 40,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000858,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "05cea4a8",
+      "parent_id": "4201d4b5",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.773879866,
+      "wall_s": 1.4900999985911767e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "4df22dc1",
+      "parent_id": "05cea4a8",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "small"
+      },
+      "start": 1185.773883754,
+      "wall_s": 1.0467000038261176e-05,
+      "latency_s": 0.17777777777777776,
+      "tokens_in": 68,
+      "tokens_out": 5,
+      "ttft_s": 0.15,
+      "cost_usd": 1.3199999999999999e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "94779bad",
+      "parent_id": "4201d4b5",
+      "name": "critic",
+      "kind": "agent",
+      "attrs": {
+        "agent": "critic"
+      },
+      "start": 1185.773907779,
+      "wall_s": 5.429299994830217e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "7af18b21",
+      "parent_id": "94779bad",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "small"
+      },
+      "start": 1185.77391229,
+      "wall_s": 1.249199999620032e-05,
+      "latency_s": 0.21666666666666667,
+      "tokens_in": 147,
+      "tokens_out": 12,
+      "ttft_s": 0.15,
+      "cost_usd": 2.925e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "3de778a6",
+      "parent_id": "94779bad",
+      "name": "tool:read_file",
+      "kind": "tool",
+      "attrs": {
+        "agent": "critic",
+        "tool": "read_file",
+        "arg": "com/shop/payment/PaymentClient.java:11",
+        "cache_hit": true
+      },
+      "start": 1185.773929026,
+      "wall_s": 3.925000100934994e-06,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "8224cd0e",
+      "parent_id": "94779bad",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "small"
+      },
+      "start": 1185.773936629,
+      "wall_s": 2.3464999912903295e-05,
+      "latency_s": 0.26666666666666666,
+      "tokens_in": 196,
+      "tokens_out": 21,
+      "ttft_s": 0.15,
+      "cost_usd": 4.2e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "49ce5488",
+      "parent_id": "4201d4b5",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.773976936,
+      "wall_s": 1.4921000001777429e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "1d87728d",
+      "parent_id": "49ce5488",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "small"
+      },
+      "start": 1185.773980366,
+      "wall_s": 1.0728000006565708e-05,
+      "latency_s": 0.17777777777777776,
+      "tokens_in": 68,
+      "tokens_out": 5,
+      "ttft_s": 0.15,
+      "cost_usd": 1.3199999999999999e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "a617a9d3",
+      "parent_id": "4201d4b5",
+      "name": "fix_proposer",
+      "kind": "agent",
+      "attrs": {
+        "agent": "fix_proposer",
+        "revision": true
+      },
+      "start": 1185.774007062,
+      "wall_s": 2.2197999896889087e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "ca710ae6",
+      "parent_id": "a617a9d3",
+      "name": "llm:fix_proposer",
+      "kind": "llm",
+      "attrs": {
+        "agent": "fix_proposer",
+        "model": "large"
+      },
+      "start": 1185.774010164,
+      "wall_s": 1.8400000044493936e-05,
+      "latency_s": 1.3642857142857143,
+      "tokens_in": 138,
+      "tokens_out": 64,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001374,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "bfdd1485",
+      "parent_id": "4201d4b5",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.774042059,
+      "wall_s": 1.4428999975280021e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "26fc74d5",
+      "parent_id": "bfdd1485",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "small"
+      },
+      "start": 1185.774045776,
+      "wall_s": 1.0073999874293804e-05,
+      "latency_s": 0.17777777777777776,
+      "tokens_in": 68,
+      "tokens_out": 5,
+      "ttft_s": 0.15,
+      "cost_usd": 1.3199999999999999e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "f679da1f",
+      "parent_id": "4201d4b5",
+      "name": "critic",
+      "kind": "agent",
+      "attrs": {
+        "agent": "critic"
+      },
+      "start": 1185.774069645,
+      "wall_s": 5.3210000032777316e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "09368402",
+      "parent_id": "f679da1f",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "small"
+      },
+      "start": 1185.774074008,
+      "wall_s": 1.2034999826937565e-05,
+      "latency_s": 0.21666666666666667,
+      "tokens_in": 170,
+      "tokens_out": 12,
+      "ttft_s": 0.15,
+      "cost_usd": 3.27e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "8c852946",
+      "parent_id": "f679da1f",
+      "name": "tool:read_file",
+      "kind": "tool",
+      "attrs": {
+        "agent": "critic",
+        "tool": "read_file",
+        "arg": "com/shop/payment/PaymentClient.java:11",
+        "cache_hit": true
+      },
+      "start": 1185.774090012,
+      "wall_s": 3.811999931713217e-06,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "96042523",
+      "parent_id": "f679da1f",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "small"
+      },
+      "start": 1185.774097021,
+      "wall_s": 2.3972000008143368e-05,
+      "latency_s": 0.24444444444444444,
+      "tokens_in": 220,
+      "tokens_out": 17,
+      "ttft_s": 0.15,
+      "cost_usd": 4.32e-05,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "3f1ae46a",
+      "parent_id": "4201d4b5",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.774136379,
+      "wall_s": 1.4346999932968174e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "2433a219",
+      "parent_id": "3f1ae46a",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "small"
+      },
+      "start": 1185.774139968,
+      "wall_s": 1.0230999805571628e-05,
+      "latency_s": 0.17777777777777776,
+      "tokens_in": 68,
+      "tokens_out": 5,
+      "ttft_s": 0.15,
+      "cost_usd": 1.3199999999999999e-05,
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

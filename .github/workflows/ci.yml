@@ -1,0 +1,33 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install pytest mypy
+      - run: python -m mypy triage
+      - run: python -m pytest
+      - run: python -m triage.benchmark
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t agentic-incident-triage .
+      - name: container starts, passes its health check, and refuses to run without a token
+        run: |
+          out=$(docker run --rm -e TRIAGE_HOST=0.0.0.0 agentic-incident-triage 2>&1 || true)
+          echo "$out" | grep -q "Refusing to listen"
+          docker run -d --name t -p 8080:8080 -e TRIAGE_SERVER_TOKEN=ci-token agentic-incident-triage
+          for i in $(seq 1 20); do curl -fs localhost:8080/healthz && break; sleep 1; done
+          curl -fs localhost:8080/healthz
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/metrics)" = "401"
+          docker rm -f t

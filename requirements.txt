@@ -1,0 +1,4 @@
+# Default path needs only the Python standard library.
+pytest>=8        # tests
+# Optional:
+# langgraph      # python -m triage.langgraph_port

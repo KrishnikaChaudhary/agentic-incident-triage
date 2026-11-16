@@ -1,0 +1,52 @@
+[
+  {
+    "id": "INC-101",
+    "description": "Checkout returns HTTP 500 when printing a shipping label. NullPointerException in the order service.",
+    "expected_file": "OrderService.java"
+  },
+  {
+    "id": "INC-102",
+    "description": "Payments hang then fail intermittently with SocketTimeoutException during charge.",
+    "expected_file": "PaymentClient.java"
+  },
+  {
+    "id": "INC-103",
+    "description": "API latency spike and 503s: HikariPool reports connections are not available.",
+    "expected_file": "DataSourceConfig.java"
+  },
+  {
+    "id": "INC-104",
+    "description": "Invoice import failing: UnrecognizedPropertyException when parsing partner payloads.",
+    "expected_file": "InvoiceParser.java"
+  },
+  {
+    "id": "INC-105",
+    "description": "Nightly report export crashes with OutOfMemoryError (Java heap space).",
+    "expected_file": "ReportService.java"
+  },
+  {
+    "id": "INC-106",
+    "description": "Support reports orders stuck at the label step; alerts show NullPointerException for some customers.",
+    "expected_file": "OrderService.java"
+  },
+  {
+    "id": "INC-107",
+    "description": "Card charges are slow and some fail: SocketTimeoutException from the payment client.",
+    "expected_file": "PaymentClient.java"
+  },
+  {
+    "id": "INC-108",
+    "description": "All endpoints timing out, HikariPool exhausted under load after the last deploy.",
+    "expected_file": "DataSourceConfig.java"
+  },
+  {
+    "id": "INC-109",
+    "description": "Billing sync broke after partner API update, UnrecognizedPropertyException on invoice JSON.",
+    "expected_file": "InvoiceParser.java"
+  },
+  {
+    "id": "INC-110",
+    "description": "Report service pod restarting repeatedly, OutOfMemoryError during export.",
+    "expected_file": "ReportService.java"
+  }
+]

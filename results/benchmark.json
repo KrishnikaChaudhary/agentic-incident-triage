@@ -1,0 +1,62 @@
+{
+  "baseline": {
+    "tokens_in": 4530.3,
+    "tokens_out": 211.3,
+    "cost_usd": 0.0167604,
+    "tokens_per_sec": 21.88488466986493,
+    "avg_ttft_s": 0.45,
+    "latency_s": 9.929571428571428,
+    "llm_calls": 14.7,
+    "cache_hits": 0.0,
+    "resolved": 1.0,
+    "avg_revisions": 0.5
+  },
+  "compact_state": {
+    "tokens_in": 1704.0,
+    "tokens_out": 211.3,
+    "cost_usd": 0.0082815,
+    "tokens_per_sec": 21.88488466986493,
+    "avg_ttft_s": 0.45,
+    "latency_s": 9.929571428571428,
+    "llm_calls": 14.7,
+    "cache_hits": 0.0,
+    "resolved": 1.0,
+    "avg_revisions": 0.5
+  },
+  "model_routing": {
+    "tokens_in": 4530.3,
+    "tokens_out": 211.3,
+    "cost_usd": 0.0033224400000000003,
+    "tokens_per_sec": 47.616752107099316,
+    "avg_ttft_s": 0.1797586726998492,
+    "latency_s": 4.74647619047619,
+    "llm_calls": 14.7,
+    "cache_hits": 0.0,
+    "resolved": 1.0,
+    "avg_revisions": 0.5
+  },
+  "tool_scoping_cache": {
+    "tokens_in": 3626.0,
+    "tokens_out": 211.3,
+    "cost_usd": 0.0140475,
+    "tokens_per_sec": 21.88488466986493,
+    "avg_ttft_s": 0.45,
+    "latency_s": 9.809571428571429,
+    "llm_calls": 14.7,
+    "cache_hits": 1.5,
+    "resolved": 1.0,
+    "avg_revisions": 0.5
+  },
+  "optimized": {
+    "tokens_in": 1602.0,
+    "tokens_out": 211.3,
+    "cost_usd": 0.001829265,
+    "tokens_per_sec": 47.616752107099316,
+    "avg_ttft_s": 0.1797586726998492,
+    "latency_s": 4.626476190476191,
+    "llm_calls": 14.7,
+    "cache_hits": 1.5,
+    "resolved": 1.0,
+    "avg_revisions": 0.5
+  }
+}

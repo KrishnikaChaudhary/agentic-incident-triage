@@ -1,0 +1,752 @@
+{
+  "trace_id": "b90570f7a3754a32b8aa10d71661b313",
+  "name": "INC-103",
+  "summary": {
+    "trace_id": "b90570f7a3754a32b8aa10d71661b313",
+    "llm_calls": 18,
+    "tool_calls": 5,
+    "tool_cache_hits": 0,
+    "span_errors": 0,
+    "injection_lines_removed": 0,
+    "tokens_in": 5865,
+    "tokens_out": 266,
+    "total_tokens": 6131,
+    "cost_usd": 0.021585,
+    "tokens_per_sec": 22.352941176470587,
+    "avg_ttft_s": 0.44999999999999996,
+    "latency_s": 12.3,
+    "per_agent": {
+      "supervisor": {
+        "calls": 7,
+        "tokens_in": 2162,
+        "tokens_out": 35,
+        "cost_usd": 0.007011
+      },
+      "log_analyst": {
+        "calls": 2,
+        "tokens_in": 263,
+        "tokens_out": 43,
+        "cost_usd": 0.001434
+      },
+      "code_investigator": {
+        "calls": 3,
+        "tokens_in": 737,
+        "tokens_out": 36,
+        "cost_usd": 0.002751
+      },
+      "fix_proposer": {
+        "calls": 2,
+        "tokens_in": 758,
+        "tokens_out": 90,
+        "cost_usd": 0.0036240000000000005
+      },
+      "critic": {
+        "calls": 4,
+        "tokens_in": 1945,
+        "tokens_out": 62,
+        "cost_usd": 0.006765
+      }
+    }
+  },
+  "spans": [
+    {
+      "span_id": "3cab5803",
+      "parent_id": null,
+      "name": "incident",
+      "kind": "request",
+      "attrs": {
+        "incident": "INC-103",
+        "config": "baseline",
+        "run_id": "96e0dfc7f7de4f29b8e25e6cab876141",
+        "attempt": 1
+      },
+      "start": 1185.711140042,
+      "wall_s": 0.0014422730000660522,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "7016986f",
+      "parent_id": "3cab5803",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.71114845,
+      "wall_s": 2.5732999802130507e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "2cd583f8",
+      "parent_id": "7016986f",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "large"
+      },
+      "start": 1185.711154443,
+      "wall_s": 1.8411000155538204e-05,
+      "latency_s": 0.5214285714285715,
+      "tokens_in": 70,
+      "tokens_out": 5,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000285,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "c8dac275",
+      "parent_id": "3cab5803",
+      "name": "log_analyst",
+      "kind": "agent",
+      "attrs": {
+        "agent": "log_analyst"
+      },
+      "start": 1185.711193103,
+      "wall_s": 0.00016692300005161087,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "503c07d7",
+      "parent_id": "c8dac275",
+      "name": "llm:log_analyst",
+      "kind": "llm",
+      "attrs": {
+        "agent": "log_analyst",
+        "model": "large"
+      },
+      "start": 1185.711198827,
+      "wall_s": 1.5190999874903355e-05,
+      "latency_s": 0.6357142857142857,
+      "tokens_in": 99,
+      "tokens_out": 13,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000492,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "24f6463f",
+      "parent_id": "c8dac275",
+      "name": "tool:search_logs",
+      "kind": "tool",
+      "attrs": {
+        "agent": "log_analyst",
+        "tool": "search_logs",
+        "arg": "Hikari"
+      },
+      "start": 1185.711219695,
+      "wall_s": 0.00010051300000668562,
+      "latency_s": 0.08,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "db3b0486",
+      "parent_id": "c8dac275",
+      "name": "llm:log_analyst",
+      "kind": "llm",
+      "attrs": {
+        "agent": "log_analyst",
+        "model": "large"
+      },
+      "start": 1185.711328684,
+      "wall_s": 2.8064000161975855e-05,
+      "latency_s": 0.8785714285714286,
+      "tokens_in": 164,
+      "tokens_out": 30,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000942,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "b3f176c6",
+      "parent_id": "3cab5803",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.711378459,
+      "wall_s": 2.5887000219881884e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "903526de",
+      "parent_id": "b3f176c6",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "large"
+      },
+      "start": 1185.711384371,
+      "wall_s": 1.902100007100671e-05,
+      "latency_s": 0.5214285714285715,
+      "tokens_in": 166,
+      "tokens_out": 5,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000573,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "810900b9",
+      "parent_id": "3cab5803",
+      "name": "code_investigator",
+      "kind": "agent",
+      "attrs": {
+        "agent": "code_investigator"
+      },
+      "start": 1185.71142037,
+      "wall_s": 0.00035081800001535157,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "082333e8",
+      "parent_id": "810900b9",
+      "name": "llm:code_investigator",
+      "kind": "llm",
+      "attrs": {
+        "agent": "code_investigator",
+        "model": "large"
+      },
+      "start": 1185.711427444,
+      "wall_s": 2.286599988110538e-05,
+      "latency_s": 0.65,
+      "tokens_in": 212,
+      "tokens_out": 14,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000846,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "38a0bd6e",
+      "parent_id": "810900b9",
+      "name": "tool:grep_code",
+      "kind": "tool",
+      "attrs": {
+        "agent": "code_investigator",
+        "tool": "grep_code",
+        "arg": "setMaximumPoolSize"
+      },
+      "start": 1185.711455722,
+      "wall_s": 7.810600004631851e-05,
+      "latency_s": 0.08,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "35fda9a6",
+      "parent_id": "810900b9",
+      "name": "llm:code_investigator",
+      "kind": "llm",
+      "attrs": {
+        "agent": "code_investigator",
+        "model": "large"
+      },
+      "start": 1185.711541359,
+      "wall_s": 0.00011747799999284325,
+      "latency_s": 0.5785714285714285,
+      "tokens_in": 231,
+      "tokens_out": 9,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000828,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "35c8b47b",
+      "parent_id": "810900b9",
+      "name": "tool:read_file",
+      "kind": "tool",
+      "attrs": {
+        "agent": "code_investigator",
+        "tool": "read_file",
+        "arg": "com/shop/config/DataSourceConfig.java:8"
+      },
+      "start": 1185.71166745,
+      "wall_s": 5.279699985294428e-05,
+      "latency_s": 0.08,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "ba702181",
+      "parent_id": "810900b9",
+      "name": "llm:code_investigator",
+      "kind": "llm",
+      "attrs": {
+        "agent": "code_investigator",
+        "model": "large"
+      },
+      "start": 1185.711727341,
+      "wall_s": 4.08250000418775e-05,
+      "latency_s": 0.6357142857142857,
+      "tokens_in": 294,
+      "tokens_out": 13,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001077,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "d5d577ed",
+      "parent_id": "3cab5803",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.711789288,
+      "wall_s": 2.779399983410258e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "e544da23",
+      "parent_id": "d5d577ed",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "large"
+      },
+      "start": 1185.711794885,
+      "wall_s": 2.1336999907362042e-05,
+      "latency_s": 0.5214285714285715,
+      "tokens_in": 264,
+      "tokens_out": 5,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000867,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "920dba3e",
+      "parent_id": "3cab5803",
+      "name": "fix_proposer",
+      "kind": "agent",
+      "attrs": {
+        "agent": "fix_proposer",
+        "revision": false
+      },
+      "start": 1185.711835501,
+      "wall_s": 3.0847000061839935e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "203d4a6f",
+      "parent_id": "920dba3e",
+      "name": "llm:fix_proposer",
+      "kind": "llm",
+      "attrs": {
+        "agent": "fix_proposer",
+        "model": "large"
+      },
+      "start": 1185.711840211,
+      "wall_s": 2.544299991313892e-05,
+      "latency_s": 0.9928571428571429,
+      "tokens_in": 291,
+      "tokens_out": 38,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001443,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "423831e1",
+      "parent_id": "3cab5803",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.711882088,
+      "wall_s": 2.9068000003462657e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "cce5bd36",
+      "parent_id": "423831e1",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "large"
+      },
+      "start": 1185.711887231,
+      "wall_s": 2.3040000087348744e-05,
+      "latency_s": 0.5214285714285715,
+      "tokens_in": 303,
+      "tokens_out": 5,
+      "ttft_s": 0.45,
+      "cost_usd": 0.000984,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "9053cac8",
+      "parent_id": "3cab5803",
+      "name": "critic",
+      "kind": "agent",
+      "attrs": {
+        "agent": "critic"
+      },
+      "start": 1185.711927981,
+      "wall_s": 0.00018470999998498883,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "0976b6c0",
+      "parent_id": "9053cac8",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "large"
+      },
+      "start": 1185.711934374,
+      "wall_s": 2.3477000013372162e-05,
+      "latency_s": 0.6214285714285714,
+      "tokens_in": 377,
+      "tokens_out": 12,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001311,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "5b00c9a6",
+      "parent_id": "9053cac8",
+      "name": "tool:read_file",
+      "kind": "tool",
+      "attrs": {
+        "agent": "critic",
+        "tool": "read_file",
+        "arg": "com/shop/config/DataSourceConfig.java:8"
+      },
+      "start": 1185.711963629,
+      "wall_s": 9.585500015418802e-05,
+      "latency_s": 0.08,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "1a8701a2",
+      "parent_id": "9053cac8",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "large"
+      },
+      "start": 1185.712067931,
+      "wall_s": 4.16010000208189e-05,
+      "latency_s": 0.75,
+      "tokens_in": 441,
+      "tokens_out": 21,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001638,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "40bfb14c",
+      "parent_id": "3cab5803",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.712134063,
+      "wall_s": 3.21870002153446e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "90f4a893",
+      "parent_id": "40bfb14c",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "large"
+      },
+      "start": 1185.712140431,
+      "wall_s": 2.4856999971234472e-05,
+      "latency_s": 0.5214285714285715,
+      "tokens_in": 390,
+      "tokens_out": 5,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001245,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "c766040d",
+      "parent_id": "3cab5803",
+      "name": "fix_proposer",
+      "kind": "agent",
+      "attrs": {
+        "agent": "fix_proposer",
+        "revision": true
+      },
+      "start": 1185.712225051,
+      "wall_s": 6.149099999674945e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "d281ff71",
+      "parent_id": "c766040d",
+      "name": "llm:fix_proposer",
+      "kind": "llm",
+      "attrs": {
+        "agent": "fix_proposer",
+        "model": "large"
+      },
+      "start": 1185.712229282,
+      "wall_s": 5.609200002254511e-05,
+      "latency_s": 1.1928571428571428,
+      "tokens_in": 467,
+      "tokens_out": 52,
+      "ttft_s": 0.45,
+      "cost_usd": 0.002181,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "08b5d6b6",
+      "parent_id": "3cab5803",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.712310689,
+      "wall_s": 3.229999992981902e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "490ffb0c",
+      "parent_id": "08b5d6b6",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "large"
+      },
+      "start": 1185.712316994,
+      "wall_s": 2.495499984433991e-05,
+      "latency_s": 0.5214285714285715,
+      "tokens_in": 443,
+      "tokens_out": 5,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001404,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "d9eed294",
+      "parent_id": "3cab5803",
+      "name": "critic",
+      "kind": "agent",
+      "attrs": {
+        "agent": "critic"
+      },
+      "start": 1185.712361083,
+      "wall_s": 0.00014611599999625469,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "da6ff69a",
+      "parent_id": "d9eed294",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "large"
+      },
+      "start": 1185.712367516,
+      "wall_s": 2.5942999855033122e-05,
+      "latency_s": 0.6214285714285714,
+      "tokens_in": 532,
+      "tokens_out": 12,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001776,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "f97dc830",
+      "parent_id": "d9eed294",
+      "name": "tool:read_file",
+      "kind": "tool",
+      "attrs": {
+        "agent": "critic",
+        "tool": "read_file",
+        "arg": "com/shop/config/DataSourceConfig.java:8"
+      },
+      "start": 1185.712399291,
+      "wall_s": 5.086499982098758e-05,
+      "latency_s": 0.08,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "519e0511",
+      "parent_id": "d9eed294",
+      "name": "llm:critic",
+      "kind": "llm",
+      "attrs": {
+        "agent": "critic",
+        "model": "large"
+      },
+      "start": 1185.712456047,
+      "wall_s": 4.8320000132662244e-05,
+      "latency_s": 0.6928571428571428,
+      "tokens_in": 595,
+      "tokens_out": 17,
+      "ttft_s": 0.45,
+      "cost_usd": 0.00204,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "394208cd",
+      "parent_id": "3cab5803",
+      "name": "supervisor",
+      "kind": "agent",
+      "attrs": {
+        "agent": "supervisor"
+      },
+      "start": 1185.712533461,
+      "wall_s": 3.4267000046384055e-05,
+      "latency_s": 0.0,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "ttft_s": 0.0,
+      "cost_usd": 0.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "span_id": "b88e90a3",
+      "parent_id": "394208cd",
+      "name": "llm:supervisor",
+      "kind": "llm",
+      "attrs": {
+        "agent": "supervisor",
+        "model": "large"
+      },
+      "start": 1185.712539223,
+      "wall_s": 2.7384000077290693e-05,
+      "latency_s": 0.5214285714285715,
+      "tokens_in": 526,
+      "tokens_out": 5,
+      "ttft_s": 0.45,
+      "cost_usd": 0.001653,
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

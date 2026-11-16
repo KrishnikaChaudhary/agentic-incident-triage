@@ -1,0 +1,30 @@
+# NOTE: not run in the authoring sandbox (no Docker daemon).
+# Usage:  TRIAGE_SERVER_TOKEN=$(openssl rand -hex 24) docker compose up --build
+services:
+  triage:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"   # publish on loopback only; put a reverse proxy / TLS in front for anything else
+    environment:
+      TRIAGE_SERVER_TOKEN: ${TRIAGE_SERVER_TOKEN:?set TRIAGE_SERVER_TOKEN}
+      TRIAGE_LLM: ${TRIAGE_LLM:-mock}              # set to "env" and pass the TRIAGE_* / API key variables below for a real model
+      TRIAGE_PROVIDER: ${TRIAGE_PROVIDER:-}
+      TRIAGE_MODEL_SMALL: ${TRIAGE_MODEL_SMALL:-}
+      TRIAGE_MODEL_LARGE: ${TRIAGE_MODEL_LARGE:-}
+      TRIAGE_PRICE_SMALL: ${TRIAGE_PRICE_SMALL:-}
+      TRIAGE_PRICE_LARGE: ${TRIAGE_PRICE_LARGE:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - triage-data:/data
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  triage-data:

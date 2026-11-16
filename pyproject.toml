@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-incident-triage"
+version = "1.0.0"
+description = "Hierarchical multi-agent incident triage (ReAct, self-reflection, supervisor delegation) with LLM-native observability"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []  # the runtime is standard-library only
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "mypy>=1.8"]
+langgraph = ["langgraph"]
+
+[project.scripts]
+triage = "triage.cli:main"
+triage-server = "triage.server:main"
+triage-bench = "triage.benchmark:main"
+
+[tool.setuptools.packages.find]
+include = ["triage*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = true

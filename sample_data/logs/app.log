@@ -1,0 +1,66 @@
+2026-11-10 01:11:01 ERROR [INC-101] java.lang.NullPointerException: Cannot invoke "Customer.getAddress()" because "c" is null
+	at com.shop.order.OrderService.shippingLabel(OrderService.java:15)
+	at com.shop.web.CheckoutController.label(CheckoutController.java:58)
+2026-11-10 01:11:01 INFO  [req-10] request completed in 40ms
+2026-11-10 01:11:01 INFO  [req-11] request completed in 53ms
+2026-11-10 01:11:01 INFO  [req-12] request completed in 66ms
+2026-11-10 01:11:01 WARN  [req-19] recovered from SocketTimeoutException on retry 2
+2026-11-10 02:12:02 ERROR [INC-102] java.net.SocketTimeoutException: Read timed out
+	at com.shop.payment.PaymentClient.charge(PaymentClient.java:11)
+	at com.shop.web.PayController.pay(PayController.java:41)
+2026-11-10 02:12:02 INFO  [req-20] request completed in 40ms
+2026-11-10 02:12:02 INFO  [req-21] request completed in 53ms
+2026-11-10 02:12:02 INFO  [req-22] request completed in 66ms
+2026-11-10 02:12:02 WARN  [req-29] recovered from UnrecognizedPropertyException on retry 3
+2026-11-10 03:13:03 ERROR [INC-103] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=5, active=5, idle=0, waiting=37)
+2026-11-10 03:13:03 INFO  [req-30] request completed in 40ms
+2026-11-10 03:13:03 INFO  [req-31] request completed in 53ms
+2026-11-10 03:13:03 INFO  [req-32] request completed in 66ms
+2026-11-10 03:13:03 WARN  [req-39] recovered from OutOfMemoryError on retry 1
+2026-11-10 04:14:04 ERROR [INC-104] com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "taxCode"
+	at com.shop.billing.InvoiceParser.parse(InvoiceParser.java:9)
+	at com.shop.billing.ImportJob.run(ImportJob.java:27)
+2026-11-10 04:14:04 INFO  [req-40] request completed in 40ms
+2026-11-10 04:14:04 INFO  [req-41] request completed in 53ms
+2026-11-10 04:14:04 INFO  [req-42] request completed in 66ms
+2026-11-10 04:14:04 WARN  [req-49] recovered from NullPointerException on retry 2
+2026-11-10 05:15:05 ERROR [INC-105] java.lang.OutOfMemoryError: Java heap space
+	at com.shop.report.ReportService.exportAll(ReportService.java:9)
+	at com.shop.report.NightlyJob.run(NightlyJob.java:19)
+2026-11-10 05:15:05 INFO  [req-50] request completed in 40ms
+2026-11-10 05:15:05 INFO  [req-51] request completed in 53ms
+2026-11-10 05:15:05 INFO  [req-52] request completed in 66ms
+2026-11-10 05:15:05 WARN  [req-59] recovered from SocketTimeoutException on retry 3
+2026-11-11 06:10:06 ERROR [INC-106] java.lang.NullPointerException: Cannot invoke "Customer.getAddress()" because "c" is null
+	at com.shop.order.OrderService.shippingLabel(OrderService.java:15)
+	at com.shop.web.CheckoutController.label(CheckoutController.java:58)
+2026-11-11 06:10:06 INFO  [req-60] request completed in 40ms
+2026-11-11 06:10:06 INFO  [req-61] request completed in 53ms
+2026-11-11 06:10:06 INFO  [req-62] request completed in 66ms
+2026-11-11 06:10:06 WARN  [req-69] recovered from UnrecognizedPropertyException on retry 1
+2026-11-11 07:11:07 ERROR [INC-107] java.net.SocketTimeoutException: Read timed out
+	at com.shop.payment.PaymentClient.charge(PaymentClient.java:11)
+	at com.shop.web.PayController.pay(PayController.java:41)
+2026-11-11 07:11:07 INFO  [req-70] request completed in 40ms
+2026-11-11 07:11:07 INFO  [req-71] request completed in 53ms
+2026-11-11 07:11:07 INFO  [req-72] request completed in 66ms
+2026-11-11 07:11:07 WARN  [req-79] recovered from OutOfMemoryError on retry 2
+2026-11-11 08:12:08 ERROR [INC-108] HikariPool-1 - Connection is not available, request timed out after 30000ms (total=5, active=5, idle=0, waiting=37)
+2026-11-11 08:12:08 INFO  [req-80] request completed in 40ms
+2026-11-11 08:12:08 INFO  [req-81] request completed in 53ms
+2026-11-11 08:12:08 INFO  [req-82] request completed in 66ms
+2026-11-11 08:12:08 WARN  [req-89] recovered from NullPointerException on retry 3
+2026-11-11 09:13:00 ERROR [INC-109] com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "taxCode"
+	at com.shop.billing.InvoiceParser.parse(InvoiceParser.java:9)
+	at com.shop.billing.ImportJob.run(ImportJob.java:27)
+2026-11-11 09:13:00 INFO  [req-90] request completed in 40ms
+2026-11-11 09:13:00 INFO  [req-91] request completed in 53ms
+2026-11-11 09:13:00 INFO  [req-92] request completed in 66ms
+2026-11-11 09:13:00 WARN  [req-99] recovered from SocketTimeoutException on retry 1
+2026-11-11 00:14:01 ERROR [INC-110] java.lang.OutOfMemoryError: Java heap space
+	at com.shop.report.ReportService.exportAll(ReportService.java:9)
+	at com.shop.report.NightlyJob.run(NightlyJob.java:19)
+2026-11-11 00:14:01 INFO  [req-100] request completed in 40ms
+2026-11-11 00:14:01 INFO  [req-101] request completed in 53ms
+2026-11-11 00:14:01 INFO  [req-102] request completed in 66ms
+2026-11-11 00:14:01 WARN  [req-109] recovered from UnrecognizedPropertyException on retry 2
